@@ -1,30 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shadaab Bhamla | IT & Cybersecurity</title>
+  <meta name="description" content="IT student focused on cybersecurity, endpoint protection, firewalls, and cloud labs." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Shadaab Bhamla</h1>
-  <p>IT Student | Cybersecurity & Networking</p>
+  <header class="container header">
+    <a class="logo" href="#">SB</a>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#involvement">Involvement</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeBtn" class="btn ghost" type="button">Toggle</button>
+  </header>
 
-  <h2>About Me</h2>
-  <p>
-    IT student with hands-on experience in endpoint security, firewall configuration,
-    and cloud fundamentals.
-  </p>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">IT Student • Cybersecurity • Cloud</p>
+        <h1>Shadaab Bhamla</h1>
+        <p class="sub">
+          Hands-on experience with CrowdStrike Falcon (EDR), Palo Alto firewalls (PAN-OS),
+          and AWS labs (IAM/VPC/EC2). Based in Greenfield, WI.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn ghost" href="Shadaab_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="btn ghost" href="https://linkedin.com/in/shadaabb" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Smart Factory – AI-driven efficiency improvements</li>
-    <li>CrowdStrike Falcon – Hands-on EDR lab</li>
-  </ul>
+      <div class="card">
+        <h3>What I’m aiming for</h3>
+        <ul class="bullets">
+          <li>IT Support / SOC / Security internships</li>
+          <li>Endpoint + network security fundamentals</li>
+          <li>Real labs + practical troubleshooting</li>
+        </ul>
+      </div>
+    </section>
 
-  <h2>Contact</h2>
-  <p>
-    <a href="mailto:shadaabbhamla@gmail.com">Email</a> |
-    <a href="https://linkedin.com/in/shadaabb">LinkedIn</a>
-  </p>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Smart Factory (MKE Tech Hub)</h3>
+          <p>AI-powered concept to improve manufacturing efficiency and reduce waste. Presented to local tech leaders.</p>
+          <div class="tags">
+            <span>Team Project</span><span>Presentation</span><span>Problem Solving</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>CrowdStrike Falcon (Hands-on Lab)</h3>
+          <p>Monitored endpoint activity and investigated security alerts through dashboards; learned IR workflows.</p>
+          <div class="tags">
+            <span>EDR</span><span>Threat Triage</span><span>Dashboards</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Palo Alto Firewall Labs (PAN-OS)</h3>
+          <p>Configured management access, zones, policies, and NAT rules; validated traffic flows and reviewed logs.</p>
+          <div class="tags">
+            <span>PAN-OS</span><span>Security Zones</span><span>NAT</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>AWS Labs (Cloud Class)</h3>
+          <p>Built basic cloud networking and compute setups using IAM, VPC, and EC2; practiced access + security basics.</p>
+          <div class="tags">
+            <span>AWS</span><span>IAM</span><span>VPC</span><span>EC2</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="twoCol">
+        <div class="card">
+          <h3>Technical</h3>
+          <ul class="bullets">
+            <li>Windows • Active Directory • Azure AD</li>
+            <li>CrowdStrike Falcon (EDR)</li>
+            <li>Palo Alto Firewalls (PAN-OS)</li>
+            <li>AWS: IAM, VPC, EC2</li>
+            <li>PowerShell • Python • Networking fundamentals</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Professional</h3>
+          <ul class="bullets">
+            <li>Customer service + communication</li>
+            <li>Leadership (store management)</li>
+            <li>Team collaboration</li>
+            <li>Problem solving + troubleshooting mindset</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="involvement" class="section">
+      <h2>Involvement</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>MATC ISS Club</h3>
+          <p>Hands-on security labs with real network gear, including Palo Alto firewall labs and policy/NAT practice.</p>
+        </article>
+        <article class="card">
+          <h3>HDI Local Chapter</h3>
+          <p>Networking with IT professionals; exposure to IT support/service management practices.</p>
+        </article>
+        <article class="card">
+          <h3>NSLS</h3>
+          <p>Leadership development and professional growth activities.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Best way to reach me:</p>
+        <div class="contactRow">
+          <a class="btn" href="mailto:shadaabbhamla@gmail.com">Email Me</a>
+          <a class="btn ghost" href="https://linkedin.com/in/shadaabb" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Shadaab Bhamla</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
