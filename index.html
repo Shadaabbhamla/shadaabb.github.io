@@ -1,257 +1,1200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadaab Bhamla | IT & Cybersecurity</title>
-  <meta name="description" content="Shadaab Bhamla - IT student focused on cybersecurity, cloud, and networking. Projects, experience, and contact." />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadaab Bhamla | Cybersecurity & IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #111530;
+            --bg-tertiary: #1a1f3a;
+            --accent-cyan: #00fff9;
+            --accent-magenta: #ff00ff;
+            --accent-green: #00ff88;
+            --text-primary: #e0e6ff;
+            --text-secondary: #8b94c8;
+            --grid-color: rgba(0, 255, 249, 0.05);
+            --glow-cyan: rgba(0, 255, 249, 0.3);
+            --glow-magenta: rgba(255, 0, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Grid Background */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridScroll 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes gridScroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 249, 0.2);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px var(--glow-cyan);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px var(--glow-cyan);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--accent-green);
+            border-radius: 50px;
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 5px var(--accent-green), 0 0 10px rgba(0, 255, 136, 0.3); }
+            50% { box-shadow: 0 0 20px var(--accent-green), 0 0 30px rgba(0, 255, 136, 0.5); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, var(--accent-cyan), var(--accent-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            text-shadow: 0 0 40px var(--glow-cyan);
+            animation: glowText 3s ease-in-out infinite;
+        }
+
+        @keyframes glowText {
+            0%, 100% { filter: drop-shadow(0 0 20px var(--glow-cyan)); }
+            50% { filter: drop-shadow(0 0 40px var(--glow-magenta)); }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+            color: var(--bg-primary);
+            border: none;
+            box-shadow: 0 0 20px var(--glow-cyan);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px var(--glow-magenta);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 255, 249, 0.1);
+            box-shadow: 0 0 20px var(--glow-cyan);
+            transform: translateY(-3px);
+        }
+
+        /* Terminal Section */
+        .terminal {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(0, 255, 249, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .terminal-content {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--accent-green);
+        }
+
+        .terminal-line {
+            margin-bottom: 0.8rem;
+            opacity: 0;
+            animation: typeLine 0.5s ease-out forwards;
+        }
+
+        .terminal-line:nth-child(1) { animation-delay: 0.5s; }
+        .terminal-line:nth-child(2) { animation-delay: 1s; }
+        .terminal-line:nth-child(3) { animation-delay: 1.5s; }
+        .terminal-line:nth-child(4) { animation-delay: 2s; }
+        .terminal-line:nth-child(5) { animation-delay: 2.5s; }
+        .terminal-line:nth-child(6) { animation-delay: 3s; }
+
+        @keyframes typeLine {
+            to { opacity: 1; }
+        }
+
+        .prompt { color: var(--accent-cyan); }
+        .command { color: var(--accent-magenta); }
+        .output { color: var(--text-secondary); }
+        .success { color: var(--accent-green); }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(0, 255, 249, 0.2);
+            border-radius: 10px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 60px rgba(0, 255, 249, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .skill-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: rgba(0, 255, 249, 0.1);
+            border: 1px solid rgba(0, 255, 249, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-magenta));
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(0, 255, 249, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            width: calc(50% - 40px);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 40px rgba(0, 255, 249, 0.2);
+            transform: scale(1.02);
+        }
+
+        .timeline-date {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-magenta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-cyan);
+            border: 4px solid var(--bg-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--glow-cyan);
+            z-index: 10;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(0, 255, 249, 0.2);
+            border-radius: 10px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--glow-cyan), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover::after {
+            opacity: 0.3;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 60px rgba(0, 255, 249, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .cert-card::before {
+            content: '🏆';
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+            filter: grayscale(0.5);
+            transition: filter 0.4s ease;
+        }
+
+        .cert-card:hover::before {
+            filter: grayscale(0);
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-magenta);
+            box-shadow: 0 10px 40px rgba(255, 0, 255, 0.3);
+        }
+
+        .cert-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-magenta);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Tools Section */
+        .tools-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .tool-item {
+            padding: 1rem 2rem;
+            background: rgba(0, 255, 249, 0.05);
+            border: 1px solid rgba(0, 255, 249, 0.3);
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .tool-item:hover {
+            background: rgba(0, 255, 249, 0.15);
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glow-cyan);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(0, 255, 249, 0.2);
+            border-radius: 10px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 60px rgba(0, 255, 249, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-card a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid rgba(0, 255, 249, 0.2);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: auto !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top">S.BHAMLA</a>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#tools">Tools</a>
-      <a href="#contact">Contact</a>
-      <button class="theme" id="themeToggle" aria-label="Toggle theme">☀️</button>
+    <div class="grid-background"></div>
+    <div class="particles" id="particles"></div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">S.BHAMLA</div>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#certifications">CERTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main id="top" class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="badge">SYSTEMS SECURED</div>
-        <h1>Shadaab Bhamla</h1>
-        <p class="subtitle">IT Student • Cybersecurity • Cloud & Networking</p>
-        <p class="lead">
-          Hands-on experience with endpoint protection, firewall configuration, and enterprise security tools.
-          Focused on security fundamentals, real labs, and practical troubleshooting.
-        </p>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="status-badge">⚡ SYSTEMS SECURED</div>
+                    <h1>SHADAAB BHAMLA</h1>
+                    <p class="subtitle">IT STUDENT • CYBERSECURITY • CLOUD & NETWORKING</p>
+                    <p class="hero-description">
+                        Hands-on experience with endpoint protection, firewall configuration, and enterprise security tools.
+                        Focused on security fundamentals, real labs, and practical troubleshooting.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">GET IN TOUCH</a>
+                        <a href="#projects" class="btn btn-secondary">VIEW PROJECTS</a>
+                    </div>
+                    
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="command">whoami</span></div>
+                            <div class="terminal-line output">IT student (Cybersecurity/Networking) | Greenfield, WI</div>
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="command">cat focus.txt</span></div>
+                            <div class="terminal-line output">Endpoint Protection • Firewalls • AWS • Active Directory</div>
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="command">./check_threats.sh</span></div>
+                            <div class="terminal-line success">✓ All systems secured. Monitoring active.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="cta">
-          <a class="btn primary" href="#contact">Get in Touch</a>
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="assets/Shadaab_Resume_2026.pdf" target="_blank" rel="noopener">View Resume (PDF)</a>
+        <section id="about">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 01</div>
+                    <h2>ABOUT ME</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🛡️</div>
+                        <h3>Security-Minded IT Student</h3>
+                        <p>Building a career in IT and cybersecurity through hands-on labs, club activities, and real projects. Passionate about solving problems, learning new tools, and communicating clearly in customer-facing environments.</p>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🎯</div>
+                        <h3>Career Focus</h3>
+                        <p>Seeking internship or entry-level opportunities in IT Support / Security Operations where I can grow into incident response, endpoint security, and cloud security roles.</p>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">💼</div>
+                        <h3>Professional Skills</h3>
+                        <p>Communication • Teamwork • Customer Service • Leadership • Problem Solving • Technical Documentation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 02</div>
+                    <h2>CORE COMPETENCIES</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🔒</div>
+                        <h3>Endpoint Security</h3>
+                        <p>EDR monitoring, alert review, and investigation workflows for enterprise environments.</p>
+                        <div class="skill-tags">
+                            <span class="tag">CrowdStrike Falcon</span>
+                            <span class="tag">Threat Triage</span>
+                            <span class="tag">IR Basics</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🔥</div>
+                        <h3>Firewall & Network Security</h3>
+                        <p>Zones, NAT/security policies, segmentation, and comprehensive log review.</p>
+                        <div class="skill-tags">
+                            <span class="tag">Palo Alto</span>
+                            <span class="tag">PAN-OS</span>
+                            <span class="tag">NAT</span>
+                            <span class="tag">RBAC</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">☁️</div>
+                        <h3>Cloud & Identity</h3>
+                        <p>AWS fundamentals and directory services exposure for modern infrastructure.</p>
+                        <div class="skill-tags">
+                            <span class="tag">AWS EC2</span>
+                            <span class="tag">IAM</span>
+                            <span class="tag">VPC</span>
+                            <span class="tag">Azure AD</span>
+                            <span class="tag">Active Directory</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">💻</div>
+                        <h3>Technical Skills</h3>
+                        <p>Python • PowerShell • Cisco Networking • Windows Client OS • Microsoft Office • Visual Studio Code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 03</div>
+                    <h2>PROFESSIONAL JOURNEY</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">03/2020 – PRESENT</div>
+                            <h3>Store Manager</h3>
+                            <h4>Mians Oil Clark</h4>
+                            <ul>
+                                <li>Managed inventory, vendor ordering, and daily store operations</li>
+                                <li>Trained and supervised employees to improve efficiency and customer service</li>
+                                <li>Implemented back-office system changes using Verifone C18 software</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">12/2018 – 03/2020</div>
+                            <h3>Cashier</h3>
+                            <h4>Mians Oil Clark</h4>
+                            <ul>
+                                <li>Provided customer support and maintained smooth daily operations</li>
+                                <li>Built strong customer relationships through friendly, professional interactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 04</div>
+                    <h2>FEATURED PROJECTS</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <h3>Smart Factory</h3>
+                        </div>
+                        <p>MKE Tech Hub Internship Program - Collaborated on an AI-powered Smart Factory solution to improve manufacturing efficiency and reduce waste.</p>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 1.5rem;">
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Designed IT-driven improvements that lowered operational costs by 15%
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary);">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Presented findings to industry professionals from Northwestern Mutual, WE Energies, Generac, and Rockwell Automation
+                            </li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">AI/Automation</span>
+                            <span class="tag">Operations</span>
+                            <span class="tag">Presentation</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <h3>CrowdStrike Falcon Platform</h3>
+                        </div>
+                        <p>Hands-On Cybersecurity Lab - Used CrowdStrike Falcon EDR to monitor endpoints and investigate security alerts.</p>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 1.5rem;">
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Analyzed endpoint activity in cloud dashboards to identify potential threats
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary);">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Gained exposure to enterprise incident response and endpoint protection workflows
+                            </li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">EDR</span>
+                            <span class="tag">Threat Triage</span>
+                            <span class="tag">Endpoint Security</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <h3>Palo Alto NGFW Lab</h3>
+                        </div>
+                        <p>MATC ISS Club - Configured and administered Palo Alto Networks firewalls using PAN-OS 10.1.</p>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 1.5rem;">
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Initial setup: management interface, secure admin access, RBAC
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Built security zones + Layer 3 interfaces for segmentation and least privilege
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative; color: var(--text-secondary);">
+                                <span style="position: absolute; left: 0; color: var(--accent-cyan);">▹</span>
+                                Created and tested security + NAT policies; validated traffic flows and analyzed logs
+                            </li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Palo Alto</span>
+                            <span class="tag">PAN-OS</span>
+                            <span class="tag">NAT</span>
+                            <span class="tag">RBAC</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <h3>HDI Local Chapter</h3>
+                        </div>
+                        <p>Professional Involvement - Participated in IT networking events and learned IT service management best practices.</p>
+                        <div class="project-tags">
+                            <span class="tag">ITSM</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Professional Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 05</div>
+                    <h2>CERTIFICATIONS</h2>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card fade-in">
+                        <h3>CLIENT PRO</h3>
+                        <p>CompTIA TestOut</p>
+                    </div>
+                    <div class="cert-card fade-in">
+                        <h3>PC PRO</h3>
+                        <p>CompTIA TestOut</p>
+                    </div>
+                    <div class="cert-card fade-in">
+                        <h3>SECURITY PRO</h3>
+                        <p>CompTIA TestOut</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 06</div>
+                    <h2>TOOLS & TECHNOLOGIES</h2>
+                </div>
+                <div class="tools-cloud">
+                    <div class="tool-item fade-in">CrowdStrike Falcon</div>
+                    <div class="tool-item fade-in">Palo Alto PAN-OS</div>
+                    <div class="tool-item fade-in">AWS Console</div>
+                    <div class="tool-item fade-in">Active Directory</div>
+                    <div class="tool-item fade-in">Azure AD</div>
+                    <div class="tool-item fade-in">Windows</div>
+                    <div class="tool-item fade-in">VS Code</div>
+                    <div class="tool-item fade-in">PowerShell</div>
+                    <div class="tool-item fade-in">Python</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <div class="section-number">// 07</div>
+                    <h2>LET'S CONNECT</h2>
+                    <p class="section-description">Ready to collaborate on cybersecurity projects or discuss opportunities</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:shadaabbhamla@gmail.com">shadaabbhamla@gmail.com</a>
+                    </div>
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <a href="tel:+14142044152">+1 (414) 204-4152</a>
+                    </div>
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Greenfield, WI</p>
+                    </div>
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://linkedin.com/in/shadaabb" target="_blank">linkedin.com/in/shadaabb</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Shadaab Bhamla. Crafted with precision and secured by design.</p>
         </div>
-      </div>
+    </footer>
 
-      <div class="hero-right">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="terminal-title">security_status.sh</span>
-          </div>
-          <pre class="terminal-body" id="terminalText">$ whoami
-IT student (Cybersecurity/Networking) | Greenfield, WI
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
+            particle.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
 
-$ cat focus.txt
-Endpoint Protection • Firewalls • AWS • Active Directory
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-$ ./check_threats.sh
-✓ All systems secured. Monitoring active.</pre>
-        </div>
-      </div>
-    </section>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>Security-minded IT Student</h3>
-          <p>
-            I’m building a career in IT and cybersecurity through hands-on labs, club activities, and real projects.
-            I enjoy solving problems, learning new tools, and communicating clearly in customer-facing environments.
-          </p>
-        </div>
-        <div class="card">
-          <h3>What I’m Looking For</h3>
-          <p>
-            Internship or entry-level opportunities in IT Support / Security Operations fundamentals where I can grow
-            into incident response, endpoint security, and cloud security.
-          </p>
-        </div>
-      </div>
-    </section>
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
-    <!-- SKILLS / COMPETENCIES -->
-    <section id="skills" class="section">
-      <h2>Core Competencies</h2>
-      <div class="grid three">
-        <div class="card">
-          <h3>Endpoint Security</h3>
-          <p>EDR monitoring, alert review, investigation workflows.</p>
-          <div class="tags">
-            <span>CrowdStrike Falcon</span><span>Threat Triage</span><span>IR Basics</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Firewall & Network Security</h3>
-          <p>Zones, NAT/security policies, segmentation, log review.</p>
-          <div class="tags">
-            <span>Palo Alto</span><span>PAN-OS</span><span>NAT</span><span>RBAC</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Cloud & Identity</h3>
-          <p>AWS fundamentals and directory services exposure.</p>
-          <div class="tags">
-            <span>AWS EC2</span><span>IAM</span><span>VPC</span><span>Azure AD</span><span>Active Directory</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card wide">
-        <h3>Technical Skills</h3>
-        <p class="muted">
-          Python • PowerShell • Cisco Networking • Windows Client OS • Azure AD • Active Directory • AWS (EC2, IAM, VPC) •
-          CrowdStrike Falcon • Palo Alto Firewalls • Visual Studio Code • Microsoft Office
-        </p>
-        <h3 style="margin-top:14px;">Professional Skills</h3>
-        <p class="muted">Communication • Teamwork • Customer Service • Leadership</p>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <h2>Professional Journey</h2>
-      <div class="timeline">
-        <div class="titem">
-          <div class="tdate">03/2020 – Present</div>
-          <div class="tcontent">
-            <h3>Store Manager <span class="muted">• Mians Oil Clark</span></h3>
-            <ul>
-              <li>Managed inventory, vendor ordering, and daily store operations</li>
-              <li>Trained and supervised employees to improve efficiency and customer service</li>
-              <li>Implemented back-office system changes using Verifone C18 software</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="titem">
-          <div class="tdate">12/2018 – 03/2020</div>
-          <div class="tcontent">
-            <h3>Cashier <span class="muted">• Mians Oil Clark</span></h3>
-            <ul>
-              <li>Provided customer support and maintained smooth daily operations</li>
-              <li>Built strong customer relationships through friendly, professional interactions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3>Smart Factory — MKE Tech Hub Internship Program</h3>
-          <p>
-            Collaborated on an AI-powered Smart Factory solution to improve manufacturing efficiency and reduce waste.
-          </p>
-          <ul>
-            <li>Designed IT-driven improvements that lowered operational costs by 15%</li>
-            <li>Presented findings to industry professionals (Northwestern Mutual, WE Energies, Generac, Rockwell Automation)</li>
-          </ul>
-          <div class="tags">
-            <span>AI/Automation</span><span>Operations</span><span>Presentation</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>CrowdStrike Falcon Platform — Hands-On Cybersecurity Lab</h3>
-          <p>Used CrowdStrike Falcon EDR to monitor endpoints and investigate security alerts.</p>
-          <ul>
-            <li>Analyzed endpoint activity in cloud dashboards to identify potential threats</li>
-            <li>Gained exposure to enterprise incident response and endpoint protection workflows</li>
-          </ul>
-          <div class="tags">
-            <span>EDR</span><span>Threat Triage</span><span>Endpoint Security</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Palo Alto NGFW Lab — MATC ISS Club</h3>
-          <p>Configured and administered Palo Alto Networks firewalls using PAN-OS 10.1.</p>
-          <ul>
-            <li>Initial setup: mgmt interface, secure admin access, RBAC</li>
-            <li>Built security zones + Layer 3 interfaces for segmentation and least privilege</li>
-            <li>Created and tested security + NAT policies; validated traffic flows and analyzed logs</li>
-          </ul>
-          <div class="tags">
-            <span>Palo Alto</span><span>PAN-OS</span><span>NAT</span><span>RBAC</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Professional Involvement — HDI Local Chapter</h3>
-          <p>Participated in IT networking events and learned IT service management best practices.</p>
-          <div class="tags">
-            <span>ITSM</span><span>Networking</span><span>Professional Development</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-      <h2>Certifications</h2>
-      <div class="grid three">
-        <div class="card">
-          <h3>CompTIA TestOut</h3>
-          <p class="muted">CLIENT PRO</p>
-        </div>
-        <div class="card">
-          <h3>CompTIA TestOut</h3>
-          <p class="muted">PC PRO</p>
-        </div>
-        <div class="card">
-          <h3>CompTIA TestOut</h3>
-          <p class="muted">SECURITY PRO</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOOLS -->
-    <section id="tools" class="section">
-      <h2>Tools</h2>
-      <div class="card wide">
-        <p class="muted">
-          CrowdStrike Falcon • Palo Alto PAN-OS • AWS Console • Active Directory • Azure AD • Windows • VS Code •
-          PowerShell • Python
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Let’s Connect</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>Email</h3>
-          <p><a href="mailto:shadaabbhamla@gmail.com">shadaabbhamla@gmail.com</a></p>
-          <h3 style="margin-top:14px;">Phone</h3>
-          <p><a href="tel:+14142044152">+1 (414) 204-4152</a></p>
-          <h3 style="margin-top:14px;">Location</h3>
-          <p>Greenfield, WI</p>
-        </div>
-        <div class="card">
-          <h3>Links</h3>
-          <p><a href="https://linkedin.com/in/shadaabb" target="_blank" rel="noopener">LinkedIn</a></p>
-          <p><a href="assets/Shadaab_Resume_2026.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
-          <p class="muted" style="margin-top:14px;">© <span id="year"></span> Shadaab Bhamla. Built on GitHub Pages.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
