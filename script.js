@@ -1,13 +1,19 @@
+const root = document.documentElement;
+const themeBtn = document.getElementById("themeToggle");
 const year = document.getElementById("year");
-if (year) year.textContent = new Date().getFullYear();
 
-const themeBtn = document.getElementById("themeBtn");
-const saved = localStorage.getItem("theme");
-if (saved) document.documentElement.setAttribute("data-theme", saved);
+year.textContent = new Date().getFullYear();
 
-themeBtn?.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme") || "dark";
-  const next = current === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", next);
+function setTheme(next){
+  root.setAttribute("data-theme", next);
   localStorage.setItem("theme", next);
+  themeBtn.textContent = next === "light" ? "🌙" : "☀️";
+}
+
+const saved = localStorage.getItem("theme");
+if (saved === "light" || saved === "dark") setTheme(saved);
+
+themeBtn.addEventListener("click", () => {
+  const cur = root.getAttribute("data-theme") || "dark";
+  setTheme(cur === "dark" ? "light" : "dark");
 });
