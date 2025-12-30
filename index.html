@@ -2,143 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shadaab Bhamla | IT & Cybersecurity</title>
-  <meta name="description" content="IT student focused on cybersecurity, endpoint protection, firewalls, and cloud labs." />
+  <meta name="description" content="Shadaab Bhamla - IT student focused on cybersecurity, cloud, and networking. Projects, experience, and contact." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="container header">
-    <a class="logo" href="#">SB</a>
+  <header class="topbar">
+    <a class="brand" href="#top">S.BHAMLA</a>
     <nav class="nav">
-      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#involvement">Involvement</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#tools">Tools</a>
       <a href="#contact">Contact</a>
+      <button class="theme" id="themeToggle" aria-label="Toggle theme">☀️</button>
     </nav>
-    <button id="themeBtn" class="btn ghost" type="button">Toggle</button>
   </header>
 
-  <main class="container">
+  <main id="top" class="container">
+    <!-- HERO -->
     <section class="hero">
-      <div>
-        <p class="eyebrow">IT Student • Cybersecurity • Cloud</p>
+      <div class="hero-left">
+        <div class="badge">SYSTEMS SECURED</div>
         <h1>Shadaab Bhamla</h1>
-        <p class="sub">
-          Hands-on experience with CrowdStrike Falcon (EDR), Palo Alto firewalls (PAN-OS),
-          and AWS labs (IAM/VPC/EC2). Based in Greenfield, WI.
+        <p class="subtitle">IT Student • Cybersecurity • Cloud & Networking</p>
+        <p class="lead">
+          Hands-on experience with endpoint protection, firewall configuration, and enterprise security tools.
+          Focused on security fundamentals, real labs, and practical troubleshooting.
         </p>
+
         <div class="cta">
+          <a class="btn primary" href="#contact">Get in Touch</a>
           <a class="btn" href="#projects">View Projects</a>
-          <a class="btn ghost" href="Shadaab_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-          <a class="btn ghost" href="https://linkedin.com/in/shadaabb" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="assets/Shadaab_Resume_2026.pdf" target="_blank" rel="noopener">View Resume (PDF)</a>
         </div>
       </div>
 
-      <div class="card">
-        <h3>What I’m aiming for</h3>
-        <ul class="bullets">
-          <li>IT Support / SOC / Security internships</li>
-          <li>Endpoint + network security fundamentals</li>
-          <li>Real labs + practical troubleshooting</li>
-        </ul>
+      <div class="hero-right">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="terminal-title">security_status.sh</span>
+          </div>
+          <pre class="terminal-body" id="terminalText">$ whoami
+IT student (Cybersecurity/Networking) | Greenfield, WI
+
+$ cat focus.txt
+Endpoint Protection • Firewalls • AWS • Active Directory
+
+$ ./check_threats.sh
+✓ All systems secured. Monitoring active.</pre>
+        </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Security-minded IT Student</h3>
+          <p>
+            I’m building a career in IT and cybersecurity through hands-on labs, club activities, and real projects.
+            I enjoy solving problems, learning new tools, and communicating clearly in customer-facing environments.
+          </p>
+        </div>
+        <div class="card">
+          <h3>What I’m Looking For</h3>
+          <p>
+            Internship or entry-level opportunities in IT Support / Security Operations fundamentals where I can grow
+            into incident response, endpoint security, and cloud security.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / COMPETENCIES -->
+    <section id="skills" class="section">
+      <h2>Core Competencies</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>Endpoint Security</h3>
+          <p>EDR monitoring, alert review, investigation workflows.</p>
+          <div class="tags">
+            <span>CrowdStrike Falcon</span><span>Threat Triage</span><span>IR Basics</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Firewall & Network Security</h3>
+          <p>Zones, NAT/security policies, segmentation, log review.</p>
+          <div class="tags">
+            <span>Palo Alto</span><span>PAN-OS</span><span>NAT</span><span>RBAC</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cloud & Identity</h3>
+          <p>AWS fundamentals and directory services exposure.</p>
+          <div class="tags">
+            <span>AWS EC2</span><span>IAM</span><span>VPC</span><span>Azure AD</span><span>Active Directory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <h3>Technical Skills</h3>
+        <p class="muted">
+          Python • PowerShell • Cisco Networking • Windows Client OS • Azure AD • Active Directory • AWS (EC2, IAM, VPC) •
+          CrowdStrike Falcon • Palo Alto Firewalls • Visual Studio Code • Microsoft Office
+        </p>
+        <h3 style="margin-top:14px;">Professional Skills</h3>
+        <p class="muted">Communication • Teamwork • Customer Service • Leadership</p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2>Professional Journey</h2>
+      <div class="timeline">
+        <div class="titem">
+          <div class="tdate">03/2020 – Present</div>
+          <div class="tcontent">
+            <h3>Store Manager <span class="muted">• Mians Oil Clark</span></h3>
+            <ul>
+              <li>Managed inventory, vendor ordering, and daily store operations</li>
+              <li>Trained and supervised employees to improve efficiency and customer service</li>
+              <li>Implemented back-office system changes using Verifone C18 software</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="tdate">12/2018 – 03/2020</div>
+          <div class="tcontent">
+            <h3>Cashier <span class="muted">• Mians Oil Clark</span></h3>
+            <ul>
+              <li>Provided customer support and maintained smooth daily operations</li>
+              <li>Built strong customer relationships through friendly, professional interactions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projects</h2>
-      <div class="grid">
+      <div class="grid two">
         <article class="card">
-          <h3>Smart Factory (MKE Tech Hub)</h3>
-          <p>AI-powered concept to improve manufacturing efficiency and reduce waste. Presented to local tech leaders.</p>
+          <h3>Smart Factory — MKE Tech Hub Internship Program</h3>
+          <p>
+            Collaborated on an AI-powered Smart Factory solution to improve manufacturing efficiency and reduce waste.
+          </p>
+          <ul>
+            <li>Designed IT-driven improvements that lowered operational costs by 15%</li>
+            <li>Presented findings to industry professionals (Northwestern Mutual, WE Energies, Generac, Rockwell Automation)</li>
+          </ul>
           <div class="tags">
-            <span>Team Project</span><span>Presentation</span><span>Problem Solving</span>
+            <span>AI/Automation</span><span>Operations</span><span>Presentation</span>
           </div>
         </article>
 
         <article class="card">
-          <h3>CrowdStrike Falcon (Hands-on Lab)</h3>
-          <p>Monitored endpoint activity and investigated security alerts through dashboards; learned IR workflows.</p>
+          <h3>CrowdStrike Falcon Platform — Hands-On Cybersecurity Lab</h3>
+          <p>Used CrowdStrike Falcon EDR to monitor endpoints and investigate security alerts.</p>
+          <ul>
+            <li>Analyzed endpoint activity in cloud dashboards to identify potential threats</li>
+            <li>Gained exposure to enterprise incident response and endpoint protection workflows</li>
+          </ul>
           <div class="tags">
-            <span>EDR</span><span>Threat Triage</span><span>Dashboards</span>
+            <span>EDR</span><span>Threat Triage</span><span>Endpoint Security</span>
           </div>
         </article>
 
         <article class="card">
-          <h3>Palo Alto Firewall Labs (PAN-OS)</h3>
-          <p>Configured management access, zones, policies, and NAT rules; validated traffic flows and reviewed logs.</p>
+          <h3>Palo Alto NGFW Lab — MATC ISS Club</h3>
+          <p>Configured and administered Palo Alto Networks firewalls using PAN-OS 10.1.</p>
+          <ul>
+            <li>Initial setup: mgmt interface, secure admin access, RBAC</li>
+            <li>Built security zones + Layer 3 interfaces for segmentation and least privilege</li>
+            <li>Created and tested security + NAT policies; validated traffic flows and analyzed logs</li>
+          </ul>
           <div class="tags">
-            <span>PAN-OS</span><span>Security Zones</span><span>NAT</span>
+            <span>Palo Alto</span><span>PAN-OS</span><span>NAT</span><span>RBAC</span>
           </div>
         </article>
 
         <article class="card">
-          <h3>AWS Labs (Cloud Class)</h3>
-          <p>Built basic cloud networking and compute setups using IAM, VPC, and EC2; practiced access + security basics.</p>
+          <h3>Professional Involvement — HDI Local Chapter</h3>
+          <p>Participated in IT networking events and learned IT service management best practices.</p>
           <div class="tags">
-            <span>AWS</span><span>IAM</span><span>VPC</span><span>EC2</span>
+            <span>ITSM</span><span>Networking</span><span>Professional Development</span>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="twoCol">
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+      <h2>Certifications</h2>
+      <div class="grid three">
         <div class="card">
-          <h3>Technical</h3>
-          <ul class="bullets">
-            <li>Windows • Active Directory • Azure AD</li>
-            <li>CrowdStrike Falcon (EDR)</li>
-            <li>Palo Alto Firewalls (PAN-OS)</li>
-            <li>AWS: IAM, VPC, EC2</li>
-            <li>PowerShell • Python • Networking fundamentals</li>
-          </ul>
+          <h3>CompTIA TestOut</h3>
+          <p class="muted">CLIENT PRO</p>
         </div>
         <div class="card">
-          <h3>Professional</h3>
-          <ul class="bullets">
-            <li>Customer service + communication</li>
-            <li>Leadership (store management)</li>
-            <li>Team collaboration</li>
-            <li>Problem solving + troubleshooting mindset</li>
-          </ul>
+          <h3>CompTIA TestOut</h3>
+          <p class="muted">PC PRO</p>
+        </div>
+        <div class="card">
+          <h3>CompTIA TestOut</h3>
+          <p class="muted">SECURITY PRO</p>
         </div>
       </div>
     </section>
 
-    <section id="involvement" class="section">
-      <h2>Involvement</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>MATC ISS Club</h3>
-          <p>Hands-on security labs with real network gear, including Palo Alto firewall labs and policy/NAT practice.</p>
-        </article>
-        <article class="card">
-          <h3>HDI Local Chapter</h3>
-          <p>Networking with IT professionals; exposure to IT support/service management practices.</p>
-        </article>
-        <article class="card">
-          <h3>NSLS</h3>
-          <p>Leadership development and professional growth activities.</p>
-        </article>
+    <!-- TOOLS -->
+    <section id="tools" class="section">
+      <h2>Tools</h2>
+      <div class="card wide">
+        <p class="muted">
+          CrowdStrike Falcon • Palo Alto PAN-OS • AWS Console • Active Directory • Azure AD • Windows • VS Code •
+          PowerShell • Python
+        </p>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Best way to reach me:</p>
-        <div class="contactRow">
-          <a class="btn" href="mailto:shadaabbhamla@gmail.com">Email Me</a>
-          <a class="btn ghost" href="https://linkedin.com/in/shadaabb" target="_blank" rel="noreferrer">LinkedIn</a>
+      <h2>Let’s Connect</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:shadaabbhamla@gmail.com">shadaabbhamla@gmail.com</a></p>
+          <h3 style="margin-top:14px;">Phone</h3>
+          <p><a href="tel:+14142044152">+1 (414) 204-4152</a></p>
+          <h3 style="margin-top:14px;">Location</h3>
+          <p>Greenfield, WI</p>
+        </div>
+        <div class="card">
+          <h3>Links</h3>
+          <p><a href="https://linkedin.com/in/shadaabb" target="_blank" rel="noopener">LinkedIn</a></p>
+          <p><a href="assets/Shadaab_Resume_2026.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
+          <p class="muted" style="margin-top:14px;">© <span id="year"></span> Shadaab Bhamla. Built on GitHub Pages.</p>
         </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> Shadaab Bhamla</p>
-    </footer>
   </main>
 
   <script src="script.js"></script>
