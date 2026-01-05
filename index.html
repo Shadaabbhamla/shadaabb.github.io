@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Shadaab Bhamla | Cybersecurity & IT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +60,19 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             position: relative;
             overflow-x: hidden;
+            /* iOS specific fixes */
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* iOS Safari specific fixes */
+        * {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Prevent iOS zoom on input focus */
+        input, select, textarea {
+            font-size: 16px;
         }
 
         /* Animated Background */
@@ -70,13 +85,21 @@
             pointer-events: none;
             z-index: 0;
             opacity: 0.4;
+            /* iOS performance optimization */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
 
         .gradient-orb {
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
+            -webkit-filter: blur(80px);
             animation: float 20s infinite ease-in-out;
+            /* iOS performance */
+            will-change: transform;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
 
         .orb-1 {
@@ -182,6 +205,9 @@
             border-bottom: 1px solid var(--border-light);
             z-index: 1000;
             transition: all 0.3s ease;
+            /* iOS Safari fix */
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         nav.scrolled {
@@ -241,9 +267,15 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.2s ease;
+            /* iOS touch optimization */
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-width: 44px;
+            min-height: 44px;
         }
 
-        .theme-toggle:hover {
+        .theme-toggle:hover,
+        .theme-toggle:active {
             transform: scale(1.1);
         }
 
@@ -273,6 +305,9 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
+            /* iOS touch optimization */
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .scroll-to-top.visible {
@@ -280,7 +315,8 @@
             visibility: visible;
         }
 
-        .scroll-to-top:hover {
+        .scroll-to-top:hover,
+        .scroll-to-top:active {
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
         }
@@ -886,12 +922,26 @@
                 gap: 1rem;
             }
 
+            .nav-container {
+                padding: 0 1rem;
+            }
+
             .hero {
                 padding: 5rem 1.5rem 3rem;
+                min-height: 100vh;
             }
 
             h1 {
                 font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
             }
 
             section {
@@ -903,9 +953,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
             .scroll-to-top {
                 bottom: 1.5rem;
                 right: 1.5rem;
+                width: 44px;
+                height: 44px;
             }
 
             .gradient-orb {
@@ -925,6 +981,56 @@
             .orb-3 {
                 width: 350px;
                 height: 350px;
+            }
+
+            .timeline::before {
+                left: 8px;
+            }
+
+            .timeline-item {
+                padding-left: 2rem;
+            }
+
+            .timeline-item::before {
+                left: 3px;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .skill-card,
+            .cert-card,
+            .contact-card {
+                padding: 2rem;
+            }
+        }
+
+        /* Extra small devices (iPhone SE, etc) */
+        @media (max-width: 375px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .nav-container {
+                padding: 0 0.75rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
             }
         }
     </style>
@@ -1305,7 +1411,7 @@
                     <div class="contact-card fade-in">
                         <div class="contact-icon">📧</div>
                         <h3>Email</h3>
-                        <a href="mailto:shadaabbhamla@gmail.com">shadaabbhamla@gmail.com</a>
+                        <a href="/cdn-cgi/l/email-protection#70031811141111121218111d1c1130171d11191c5e131f1d"><span class="__cf_email__" data-cfemail="a0d3c8c1c4c1c1c2c2c8c1cdccc1e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span></a>
                     </div>
                     <div class="contact-card fade-in">
                         <div class="contact-icon">💼</div>
@@ -1323,7 +1429,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Scroll to top on page load/refresh
         window.addEventListener('load', () => {
             window.scrollTo(0, 0);
@@ -1424,14 +1530,4 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const offset = 60;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                    const targetPosition = target.getBoundingClientRect().top + wind
