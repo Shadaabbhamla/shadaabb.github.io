@@ -1359,6 +1359,12 @@
 
         // Check for saved theme preference or default to dark mode
         const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        // Set dark mode as default on first visit
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', 'dark');
+        }
+        
         htmlElement.setAttribute('data-theme', currentTheme);
         updateThemeIcon(currentTheme);
 
