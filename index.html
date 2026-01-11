@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadaab Bhamla | Cybersecurity & IT</title>
+
+    <!-- SEO + Social -->
+    <meta name="description" content="Shadaab Bhamla — IT Network Specialist student focused on cybersecurity, endpoint protection, and network security.">
+    <meta name="theme-color" content="#0071e3">
+    <meta property="og:title" content="Shadaab Bhamla | Cybersecurity & IT">
+    <meta property="og:description" content="IT Network Specialist student focused on cybersecurity, endpoint protection, and network security.">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -58,6 +67,13 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             position: relative;
             overflow-x: hidden;
+        }
+
+        /* Focus styles (accessibility) */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 10px;
         }
 
         /* Animated Background */
@@ -119,18 +135,10 @@
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(50px, -50px) scale(1.1);
-            }
-            50% {
-                transform: translate(-30px, 30px) scale(0.9);
-            }
-            75% {
-                transform: translate(40px, 40px) scale(1.05);
-            }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -50px) scale(1.1); }
+            50% { transform: translate(-30px, 30px) scale(0.9); }
+            75% { transform: translate(40px, 40px) scale(1.05); }
         }
 
         /* Floating particles */
@@ -155,20 +163,10 @@
         }
 
         @keyframes floatParticle {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100px) translateX(var(--drift));
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100px) translateX(var(--drift)); opacity: 0; }
         }
 
         /* Navigation */
@@ -209,13 +207,14 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 1rem;
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            margin-right: 1rem;
         }
 
         .nav-links a {
@@ -229,6 +228,61 @@
 
         .nav-links a:hover {
             opacity: 1;
+        }
+
+        /* Mobile menu toggle button */
+        .nav-toggle {
+            display: none;
+            background: var(--bg-secondary);
+            border: 1.5px solid var(--border-light);
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: scale(1.05);
+            background: var(--card-hover-bg);
+        }
+
+        .nav-toggle svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--text-primary);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Mobile dropdown menu (only shown on small screens) */
+        .mobile-menu {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 1rem;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.9rem 0.75rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--card-bg);
+            margin-top: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--card-hover-bg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mobile-menu.open {
+            display: block;
         }
 
         /* Dark mode toggle */
@@ -330,14 +384,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-badge {
@@ -369,6 +417,14 @@
             margin-bottom: 2rem;
             font-weight: 400;
             letter-spacing: -0.5px;
+        }
+
+        /* Hero status line */
+        .hero-status {
+            margin-top: -1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
         }
 
         .hero-description {
@@ -867,6 +923,54 @@
             font-size: 0.9375rem;
         }
 
+        /* Copy Email button */
+        .copy-btn {
+            margin-top: 0.75rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: 100px;
+            border: 1.5px solid var(--border-light);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            background: var(--card-hover-bg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .email-hint {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 1.25rem;
+            transform: translateX(-50%);
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            box-shadow: var(--shadow-lg);
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 2000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* Footer */
         footer {
             background: var(--bg-secondary);
@@ -894,14 +998,31 @@
             transform: translateY(0);
         }
 
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+            .animated-background,
+            .particles-container {
+                display: none !important;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
+            .nav-toggle {
+                display: flex;
+            }
+
             .nav-right {
-                gap: 1rem;
+                gap: 0.75rem;
             }
 
             .hero {
@@ -920,7 +1041,12 @@
 
             .hero-subtitle {
                 font-size: 1.25rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-status {
+                margin-top: -1.25rem;
+                margin-bottom: 1.75rem;
             }
 
             .hero-description {
@@ -1020,6 +1146,14 @@
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+
+                <!-- Mobile nav toggle (only visible on small screens) -->
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <svg class="sun-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="5"/>
@@ -1038,6 +1172,16 @@
                 </button>
             </div>
         </div>
+
+        <!-- Mobile dropdown menu -->
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
@@ -1052,17 +1196,18 @@
                 <div class="hero-badge">IT Student</div>
                 <h1>Cybersecurity &<br>Network Specialist</h1>
                 <p class="hero-subtitle">Building secure, resilient systems for tomorrow</p>
+                <p class="hero-status">IT Network Specialist student</p>
                 <p class="hero-description">
-                    Detail-oriented IT student with hands-on experience in endpoint protection, 
-                    firewall configuration, and enterprise security tools. Passionate about 
-                    cybersecurity, network security, and implementing technical solutions that 
+                    Detail-oriented IT student with hands-on experience in endpoint protection,
+                    firewall configuration, and enterprise security tools. Passionate about
+                    cybersecurity, network security, and implementing technical solutions that
                     enhance organizational efficiency.
                 </p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Get in Touch</a>
                     <a href="#projects" class="btn btn-secondary">View Projects</a>
                 </div>
-                
+
                 <div class="info-cards">
                     <div class="info-card">
                         <span class="info-card-icon">🎓</span>
@@ -1089,8 +1234,8 @@
                     <div class="section-eyebrow">About Me</div>
                     <h2>Driven by Security,<br>Powered by Curiosity</h2>
                     <p class="section-description">
-                        I combine technical expertise with strong problem-solving skills and a passion 
-                        for cybersecurity. My experience spans from managing operations and training teams 
+                        I combine technical expertise with strong problem-solving skills and a passion
+                        for cybersecurity. My experience spans from managing operations and training teams
                         to implementing security solutions and developing technical projects.
                     </p>
                 </div>
@@ -1373,12 +1518,17 @@
                     <div class="contact-card fade-in">
                         <div class="contact-icon">📧</div>
                         <h3>Email</h3>
-                        <a href="mailto:shadaabbhamla@gmail.com">shadaabbhamla@gmail.com</a>
+
+                        <!-- Email is assembled in JS to reduce scraping -->
+                        <p class="email-hint" id="emailHint">Click to copy my email</p>
+                        <button class="copy-btn" id="copyEmailBtn" type="button" aria-label="Copy email to clipboard">
+                            Copy Email
+                        </button>
                     </div>
                     <div class="contact-card fade-in">
                         <div class="contact-icon">💼</div>
                         <h3>LinkedIn</h3>
-                        <a href="https://linkedin.com/in/shadaabb" target="_blank">linkedin.com/in/shadaabb</a>
+                        <a href="https://linkedin.com/in/shadaabb" target="_blank" rel="noopener noreferrer">linkedin.com/in/shadaabb</a>
                     </div>
                 </div>
             </div>
@@ -1402,6 +1552,9 @@
             history.scrollRestoration = 'manual';
         }
 
+        // Reduced motion preference (used across features)
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         // Dark mode toggle
         const themeToggle = document.getElementById('themeToggle');
         const sunIcon = document.querySelector('.sun-icon');
@@ -1410,19 +1563,19 @@
 
         // Check for saved theme preference or default to dark mode
         const currentTheme = localStorage.getItem('theme') || 'dark';
-        
+
         // Set dark mode as default on first visit
         if (!localStorage.getItem('theme')) {
             localStorage.setItem('theme', 'dark');
         }
-        
+
         htmlElement.setAttribute('data-theme', currentTheme);
         updateThemeIcon(currentTheme);
 
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
+
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
@@ -1438,18 +1591,96 @@
             }
         }
 
-        // Generate floating particles
-        const particlesContainer = document.getElementById('particlesContainer');
-        const particleCount = 20;
+        // Toast helper
+        function showToast(message) {
+            let toast = document.getElementById('toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'toast';
+                toast.className = 'toast';
+                document.body.appendChild(toast);
+            }
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 1800);
+        }
 
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.setProperty('--drift', (Math.random() - 0.5) * 200 + 'px');
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            particlesContainer.appendChild(particle);
+        // Copy email (assembled in JS to reduce scraping)
+        const copyEmailBtn = document.getElementById('copyEmailBtn');
+        const emailHint = document.getElementById('emailHint');
+        const emailUser = 'shadaabbhamla';
+        const emailDomain = 'gmail';
+        const emailTld = 'com';
+        const emailAddress = `${emailUser}@${emailDomain}.${emailTld}`;
+
+        if (copyEmailBtn) {
+            copyEmailBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(emailAddress);
+                    showToast('Email copied ✅');
+                    if (emailHint) emailHint.textContent = emailAddress;
+                } catch (err) {
+                    // Fallback for older browsers
+                    const temp = document.createElement('textarea');
+                    temp.value = emailAddress;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                    showToast('Email copied ✅');
+                    if (emailHint) emailHint.textContent = emailAddress;
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function closeMobileMenu() {
+            if (!mobileMenu || !navToggle) return;
+            mobileMenu.classList.remove('open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Open menu');
+        }
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('open');
+                mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+                navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            });
+
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => closeMobileMenu());
+            });
+
+            // Close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeMobileMenu();
+            });
+
+            // Close if user scrolls (nice on iPhone)
+            window.addEventListener('scroll', () => closeMobileMenu(), { passive: true });
+        }
+
+        // Generate floating particles (skip for reduced motion)
+        const particlesContainer = document.getElementById('particlesContainer');
+
+        if (particlesContainer && !prefersReducedMotion) {
+            const particleCount = 20;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.setProperty('--drift', (Math.random() - 0.5) * 200 + 'px');
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
         }
 
         // Scroll to top button
@@ -1469,27 +1700,32 @@
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
             });
         });
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Intersection Observer for fade-in animations (skip heavy animations if reduced motion)
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        } else {
+            // If reduced motion, just show everything immediately
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1498,10 +1734,10 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const offset = 60;
-                    const targetPosition = target.getBoundingRect().top + window.pageYOffset - offset;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({
                         top: targetPosition,
-                        behavior: 'smooth'
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
                     });
                 }
             });
