@@ -59,7 +59,6 @@
       position: relative;
       overflow-x: hidden;
     }
-    /* IT-themed background pattern */
     body::before {
       content: '';
       position: fixed;
@@ -978,21 +977,15 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Animated Background -->
   <div class="animated-background" aria-hidden="true">
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
     <div class="gradient-orb orb-3"></div>
   </div>
-
-  <!-- Floating Particles -->
   <div class="particles-container" id="particlesContainer" aria-hidden="true"></div>
-
   <nav id="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
       <div class="logo">Shadaab Bhamla</div>
-
       <div class="nav-right">
         <ul class="nav-links" aria-label="Primary links">
           <li><a href="#about">About</a></li>
@@ -1003,11 +996,9 @@
           <li><a href="#tools">Tools</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-
         <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span><span></span>
         </button>
-
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
           <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
@@ -1026,7 +1017,6 @@
         </button>
       </div>
     </div>
-
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-menu-inner">
         <a href="#about">About</a>
@@ -1039,30 +1029,25 @@
       </div>
     </div>
   </nav>
-
   <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
-
   <main id="main">
     <section class="hero">
       <div class="hero-content">
         <div class="hero-badge">IT Student</div>
         <h1>Cybersecurity &<br />Network Specialist</h1>
         <p class="hero-subtitle">Building secure, resilient systems for tomorrow</p>
-
         <p class="hero-description">
           Detail-oriented IT student with hands-on experience in endpoint protection, firewall configuration,
           and enterprise security tools — focused on practical, secure, and scalable implementations.
         </p>
-
         <div class="cta-buttons">
           <a href="#contact" class="btn btn-primary">Get in Touch</a>
           <a href="#projects" class="btn btn-secondary">View Projects</a>
         </div>
-
         <div class="info-cards">
           <div class="info-card">
             <span class="info-card-icon">🎓</span>
@@ -1082,8 +1067,6 @@
         </div>
       </div>
     </section>
-
-    <!-- About -->
     <section id="about" class="section-soft">
       <div class="section-container">
         <div class="section-header fade-in">
@@ -1093,7 +1076,6 @@
             A little more detail about what I do, what I'm learning, and the type of roles and projects I'm aiming for.
           </p>
         </div>
-
         <div class="about-grid">
           <div class="about-card fade-in">
             <h3>How I approach IT & security</h3>
@@ -1108,7 +1090,6 @@
             </p>
             <span class="about-pill">✅ IT Network Specialist student</span>
           </div>
-
           <div class="about-side">
             <div class="mini-card fade-in">
               <h4>What I'm focused on</h4>
@@ -1122,15 +1103,12 @@
         </div>
       </div>
     </section>
-
-    <!-- Skills -->
     <section id="skills">
       <div class="section-container">
         <div class="section-header fade-in">
           <div class="section-eyebrow">Core Competencies</div>
           <h2>Skills & Expertise</h2>
         </div>
-
         <div class="skills-grid">
           <div class="skill-card fade-in">
             <div class="skill-card-icon">🔐</div>
@@ -1142,7 +1120,6 @@
               <span class="tag">EDR</span>
             </div>
           </div>
-
           <div class="skill-card fade-in">
             <div class="skill-card-icon">🔥</div>
             <h3>Network Security</h3>
@@ -1154,7 +1131,6 @@
               <span class="tag">RBAC</span>
             </div>
           </div>
-
           <div class="skill-card fade-in">
             <div class="skill-card-icon">☁️</div>
             <h3>Cloud & Identity</h3>
@@ -1165,7 +1141,6 @@
               <span class="tag">AWS</span>
             </div>
           </div>
-
           <div class="skill-card fade-in">
             <div class="skill-card-icon">💻</div>
             <h3>Development</h3>
@@ -1176,7 +1151,6 @@
               <span class="tag">Visual Studio Code</span>
             </div>
           </div>
-
           <div class="skill-card fade-in">
             <div class="skill-card-icon">🤝</div>
             <h3>Professional Skills</h3>
@@ -1187,7 +1161,6 @@
               <span class="tag">Customer Service</span>
             </div>
           </div>
-
           <div class="skill-card fade-in">
             <div class="skill-card-icon">🌐</div>
             <h3>Languages</h3>
@@ -1201,7 +1174,6 @@
         </div>
       </div>
     </section>
-    <!-- Projects -->
     <section id="projects" class="section-soft">
       <div class="section-container">
         <div class="section-header fade-in">
@@ -1209,7 +1181,6 @@
           <h2>Projects</h2>
           <p class="section-description">Hands-on experience across cybersecurity, AI automation, and application development.</p>
         </div>
-
         <div class="projects-grid">
           <div class="project-card fade-in">
             <div class="project-image">🏭</div>
@@ -1230,7 +1201,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card fade-in">
             <div class="project-image">🛡️</div>
             <div class="project-content">
@@ -1250,7 +1220,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card fade-in">
             <div class="project-image">🔥</div>
             <div class="project-content">
@@ -1271,7 +1240,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card fade-in">
             <div class="project-image">🎮</div>
             <div class="project-content">
@@ -1290,7 +1258,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card fade-in">
             <div class="project-image">📱</div>
             <div class="project-content">
@@ -1312,15 +1279,12 @@
         </div>
       </div>
     </section>
-
-    <!-- Experience -->
     <section id="experience">
       <div class="section-container">
         <div class="section-header fade-in">
           <div class="section-eyebrow">Professional Journey</div>
           <h2>Experience</h2>
         </div>
-
         <div class="timeline">
           <div class="timeline-item fade-in">
             <div class="timeline-date">March 2020 – Present</div>
@@ -1333,7 +1297,6 @@
               <li>Utilized C-Store back-office software to implement system interface changes to Verifone C18</li>
             </ul>
           </div>
-
           <div class="timeline-item fade-in">
             <div class="timeline-date">December 2018 – March 2020</div>
             <h3>Cashier</h3>
@@ -1347,15 +1310,12 @@
         </div>
       </div>
     </section>
-
-    <!-- Certifications -->
     <section id="certifications" class="section-soft">
       <div class="section-container">
         <div class="section-header fade-in">
           <div class="section-eyebrow">Achievements</div>
           <h2>Certifications</h2>
         </div>
-
         <div class="cert-grid">
           <div class="cert-card fade-in">
             <div class="cert-icon">🏆</div>
@@ -1375,15 +1335,12 @@
         </div>
       </div>
     </section>
-
-    <!-- Tools -->
     <section id="tools">
       <div class="section-container">
         <div class="section-header fade-in">
           <div class="section-eyebrow">Tech Stack</div>
           <h2>Tools & Technologies</h2>
         </div>
-
         <div class="tools-grid">
           <div class="tool-item fade-in">CrowdStrike</div>
           <div class="tool-item fade-in">Palo Alto</div>
@@ -1398,8 +1355,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Contact -->
     <section id="contact" class="section-soft">
       <div class="section-container">
         <div class="section-header fade-in">
@@ -1409,7 +1364,6 @@
             Interested in collaborating or discussing opportunities in cybersecurity and IT? I'd love to hear from you.
           </p>
         </div>
-
         <div class="contact-grid">
           <div class="contact-card fade-in">
             <div class="contact-icon">📧</div>
@@ -1419,7 +1373,6 @@
             </button>
             <p>Click to copy my email address</p>
           </div>
-
           <div class="contact-card fade-in">
             <div class="contact-icon">💼</div>
             <h3>LinkedIn</h3>
@@ -1434,47 +1387,35 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="section-container">
       <p>© 2026 Shadaab Bhamla. Designed with care and attention to detail.</p>
     </div>
   </footer>
-
   <div class="toast" id="toast" role="status" aria-live="polite">Copied!</div>
   <script>
-    // Scroll to top on page load/refresh
     window.addEventListener('load', () => {
       window.scrollTo(0, 0);
     });
-
-    // Keep manual restoration
     if (history.scrollRestoration) {
       history.scrollRestoration = 'manual';
     }
-
-    // Dark mode toggle (default to dark on first visit)
     const themeToggle = document.getElementById('themeToggle');
     const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
     const htmlElement = document.documentElement;
-
     const savedTheme = localStorage.getItem('theme');
     const initialTheme = savedTheme || 'dark';
     if (!savedTheme) localStorage.setItem('theme', 'dark');
-
     htmlElement.setAttribute('data-theme', initialTheme);
     updateThemeIcon(initialTheme);
-
     themeToggle.addEventListener('click', () => {
       const currentTheme = htmlElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
       htmlElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateThemeIcon(newTheme);
     });
-
     function updateThemeIcon(theme) {
       if (theme === 'dark') {
         sunIcon.style.display = 'none';
@@ -1484,39 +1425,28 @@
         moonIcon.style.display = 'none';
       }
     }
-
-    // Mobile menu (iPhone-friendly; does not affect desktop nav)
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-
     function closeMenu() {
       mobileMenu.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.setAttribute('aria-label', 'Open menu');
     }
-
     menuToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', String(isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     });
-
-    // Close mobile menu after clicking a link
     mobileMenu.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', () => closeMenu());
     });
-
-    // Close on resize to desktop
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) closeMenu();
     });
-
-    // Generate floating particles (reduce count on mobile)
     const particlesContainer = document.getElementById('particlesContainer');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const particleCount = prefersReduced ? 0 : (isMobile ? 10 : 20);
-
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
@@ -1526,11 +1456,8 @@
       particle.style.animationDuration = (15 + Math.random() * 10) + 's';
       particlesContainer.appendChild(particle);
     }
-
-    // Scroll to top button + navbar shadow
     const scrollToTopBtn = document.getElementById('scrollToTop');
     const navbar = document.getElementById('navbar');
-
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 300) {
         scrollToTopBtn.classList.add('visible');
@@ -1540,61 +1467,46 @@
         navbar.classList.remove('scrolled');
       }
     });
-
     scrollToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
-    // Intersection Observer for fade-in animations
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, observerOptions);
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Smooth scrolling for navigation links (keeps offset for fixed nav)
     function setupSmoothAnchors(scope) {
       scope.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
           const target = document.querySelector(href);
           if (!target) return;
-
           e.preventDefault();
           const offset = 70;
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
           window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         });
       });
     }
     setupSmoothAnchors(document);
-
-    // Copy email (no mailto; reduces bot scraping)
     const copyBtn = document.getElementById('copyEmailBtn');
     const toast = document.getElementById('toast');
-
-    // Store email in split form to make casual scraping harder
     const emailUser = "shadaabbhamla";
     const emailDomain = "gmail.com";
     const fullEmail = `${emailUser}@${emailDomain}`;
-
     function showToast(message) {
       toast.textContent = message;
       toast.classList.add('show');
       window.clearTimeout(window.__toastTimer);
       window.__toastTimer = window.setTimeout(() => toast.classList.remove('show'), 1400);
     }
-
     copyBtn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(fullEmail);
         showToast("Email copied to clipboard ✅");
       } catch (err) {
-        // Fallback for older browsers
         const temp = document.createElement('textarea');
         temp.value = fullEmail;
         document.body.appendChild(temp);
@@ -1604,8 +1516,6 @@
         showToast("Email copied ✅");
       }
     });
-
-    // Optional: close mobile menu when clicking outside (iPhone-friendly)
     document.addEventListener('click', (e) => {
       const isClickInsideNav = navbar.contains(e.target);
       if (!isClickInsideNav && mobileMenu.classList.contains('open')) {
